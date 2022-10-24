@@ -24,9 +24,9 @@ const {
 app.disable('x-powered-by');
 
 if (NODE_ENV === 'production') {
-  app.use(express.static(join(__dirname, '..', '..', 'client', 'build')));
+  app.use(express.static(join(__dirname,  '..', 'client', 'build')));
   app.get('*', (req, res) => {
-    res.sendFile(join(__dirname, '..', '..', 'client', 'build', 'index.html'));
+    res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'));
   });
 }
 
