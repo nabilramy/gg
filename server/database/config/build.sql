@@ -17,4 +17,5 @@ CREATE TABLE operations (
     user_id INTEGER NOT NULL
 );
 
+
 COMMIT;

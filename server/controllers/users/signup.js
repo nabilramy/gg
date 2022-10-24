@@ -16,7 +16,7 @@ const signup = async (req, res) => {
           const data = await checkUserQuery(email);
           sendTokens(res, { id: data.rows[0].id, email: data.rows[0].email });
         }
-      } else res.json({ message: 'This email has already registered' });
+      } else res.json({ message: [{ message: 'This email has already registered' }] });
     }
   } catch (err) {
     res.json({ message: err });
