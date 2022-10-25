@@ -109,7 +109,7 @@ const Info = () => {
         </div>
       </div>
       <div className="card ope">
-        <h1>Operations</h1>
+        <h1>Data</h1>
         <div className="operations">
           {operations.map((operation) => {
             return (
