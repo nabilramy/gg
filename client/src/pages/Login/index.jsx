@@ -9,8 +9,7 @@ import axios from "axios";
 export default function Login() {
   const navigate = useNavigate();
 
-  const { id, setId } = useContext(Context);
-  console.log(id);
+  const { setId } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -22,10 +21,10 @@ export default function Login() {
         password,
       })
       .then((res) => {
-        console.log(res.data.user);
-        setMessage(res.data.user);
-        setId(res.data.user.id);
-        if (res.status === 200) {
+        console.log(res);
+        // setMessage(setMessage(res.data?.message[0]?.message));
+        setId(res.data?.user?.id);
+        if (res.status === 200 && res.message !== "Unauthorized") {
           navigate("/info");
         }
       })
@@ -39,7 +38,7 @@ export default function Login() {
       <Navbar />
       <div className="main_cont">
         <h1>Login</h1>
-        {message.id || <p>{message}</p>}
+        <p>{message}</p>
         <div className="inputs_cont">
           <Input
             type="email"

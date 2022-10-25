@@ -16,7 +16,7 @@ const login = (req, res) => {
   }).catch((err) => {
     const errorList = [];
     err.details.forEach((error) => {
-      errorList.push(error.message);
+      errorList.push([error.message]);
     });
     res.json({ message: errorList });
   });
