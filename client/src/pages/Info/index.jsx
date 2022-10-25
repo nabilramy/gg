@@ -99,7 +99,7 @@ const Info = () => {
           <p className="error">{withdrawError}</p>
         </div>
         <div className="card">
-          <h1>Deposet</h1>
+          <h1>Deposit</h1>
           <Input
             type="number"
             placeholder="Amount"
