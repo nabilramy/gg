@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Navbar from "../../Components/Nav";
+import { useNavigate } from "react-router-dom";
 import Input from "../../Components/Input";
 import axios from "axios";
 const Register = ({ id, setId }) => {
+  const navigate = useNavigate();
+
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -26,6 +29,8 @@ const Register = ({ id, setId }) => {
       .catch((err) => {
         console.log(err);
       });
+      navigate("/info");
+
   };
   return (
     <>
